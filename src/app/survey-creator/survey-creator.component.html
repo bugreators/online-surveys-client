@@ -1,0 +1,19 @@
+<div *ngIf="template && template.name=='Custom Survey'">
+    <ol>
+      <li *ngFor="let question of questions" class="alert alert-primary">
+        {{question}}
+      </li>
+      <span class="text-muted">Type your question here</span>
+      <input (keydown.enter)="onSubmit()" [formControl]="question" class="form-control"><br>
+    </ol>
+  <label>Template Name:</label>
+  <input class="form-control-sm" [(ngModel)]="templateName">
+  <button class="btn btn-dark" (click)="saveTemplate()" [disabled]="!templateName">Save Template</button>
+</div>
+<div *ngIf="template">
+  <ol>
+    <li *ngFor="let question of template.questions" class="alert alert-primary">
+      {{question}}
+    </li>
+  </ol>
+</div>

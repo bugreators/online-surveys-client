@@ -1,0 +1,32 @@
+<ol>
+  <li *ngFor="let question of questions;let i = index">
+    <div class="alert alert-primary">
+      <div>
+        <b>{{question}}</b>
+      </div>
+      <div class="row">
+        <div class="text-center col-2">
+          <span>Strongly Disagree</span><br>
+          <input type="radio" name="{{question + i}}">
+        </div>
+        <div class="text-center col-2">
+          <span>Disagree</span><br>
+          <input type="radio" name="{{question + i}}">
+        </div>
+        <div class="text-center col-2">
+          <span>Not Sure</span><br>
+          <input type="radio" name="{{question + i}}">
+        </div>
+        <div class="text-center col-2">
+          <span>Agree</span><br>
+          <input type="radio" name="{{question + i}}">
+        </div>
+        <div class="text-center col-2">
+          <span>Strongly Agree</span><br>
+          <input type="radio" name="{{question + i}}">
+        </div>
+      </div>
+    </div>
+  </li>
+</ol>
+<button class="btn btn-primary">Submit</button>

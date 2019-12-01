@@ -1,0 +1,11 @@
+<h3>
+  <i class="fa fa-question-circle"></i>
+  Choose Survey
+</h3>
+Survey template:
+<select [formControl]="selectSurveyForm" class="form-control-sm">
+  <option *ngFor="let template of templates" [value]="template.name" >{{template.name}}</option>
+</select>
+<div class="container">
+  <survey-creator (newTemplate)="onNewSurvey($event)" [template]="findTemplate(selectSurveyForm.value)"></survey-creator>
+</div>
